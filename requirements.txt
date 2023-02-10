@@ -1,0 +1,14 @@
+dataclasses==0.8
+datasets==1.11.0
+nltk==3.6.2
+numpy==1.19.5
+pandas==1.1.5
+protobuf==3.19.4
+ptyprocess==0.7.0
+sentencepiece==0.1.96
+tokenizers==0.12.1
+torch==1.9.1
+torchvision==0.10.1
+tqdm==4.62.0
+traitlets==4.3.3
+transformers==4.18.0
