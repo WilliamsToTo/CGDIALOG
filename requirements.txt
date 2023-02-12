@@ -1,5 +1,6 @@
+huggingface-hub==0.4.0
 dataclasses==0.8
-datasets==1.11.0
+datasets
 nltk==3.6.2
 numpy==1.19.5
 pandas==1.1.5
