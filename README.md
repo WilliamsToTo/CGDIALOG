@@ -69,3 +69,9 @@ from select_best_response_ourModel import select_highScore_response
 select_highScore_response(ourModel_file="outputs/ESConv_causal_generator_test_result", save_file="outputs/ESConv_test_result_in_testset_highestScore.json")
 select_highScore_response(ourModel_file="outputs/msc_causal_generator_test_result", save_file="outputs/msc_test_result_in_testset_highestScore.json")
 ```
+
+### Train Causal Generator
+```bash
+python run_dialogue_generation_no_trainer.py --train_file datasets/CGDIALOG/ESConv_causal_generator_train.csv --model_name_or_path models/blenderbot_400M_distill/ --output_dir models/ESConv_causal_generator_model_new
+python run_dialogue_generation_no_trainer.py --train_file datasets/CGDIALOG/msc_causal_generator_train.csv --model_name_or_path models/blenderbot_400M_distill/ --output_dir models/msc_causal_generator_model_new
+```
