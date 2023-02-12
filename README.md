@@ -34,6 +34,9 @@ The dataset format is like the following.
 ## Setup:
 The code is based on PyTorch and HuggingFace `transformers`.
 ```bash 
+cd CGDIALOG
+conda create --prefix env/ python=3.6
+conda activate env/
 pip install -r requirements.txt 
 ```
 
