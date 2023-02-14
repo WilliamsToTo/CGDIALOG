@@ -17,8 +17,8 @@ The original annotated dataset can be found in `datasets/CGDIALOG`.
 | Average token length of direct causes                  | 24.01 (std=16.61) | 22.22 (std=13.79) | 23.05 (std=15.20) |
 | The proportion of direct causes in original utterances | 0.86 (std=0.22)   | 0.72 (std=0.27)   | 0.79 (std=0.26)   |
 
-![The ratio between the number of the history-response pairs with a particular number of direct causes and all history-response pairs.](images/numOfCausesHist.png)
-![Proximity between direct causes and responses, measured by the percentage of such pairs in all history-response pairs.](images/positionOfCausesHist.png)
+![number of direct causes](images/numOfCausesHist.png "The ratio between the number of the history-response pairs with a particular number of direct causes and all history-response pairs.")
+![distance to response](images/positionOfCausesHist.png "Proximity between direct causes and responses, measured by the percentage of such pairs in all history-response pairs.")
 
 ### Data Format
 The dataset format is like the following.
