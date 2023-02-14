@@ -5,6 +5,21 @@ This repository contains the dataset and the pytorch implementations of the mode
 ## Dataset
 We leverage two public dialogue corpora (ESConv and MSC) to construct a corpus annotated with direct causes of responses called CGDIALOG.
 The original annotated dataset can be found in `datasets/CGDIALOG`.
+
+### Statistics of the CGDIALOG
+
+| Number of Items                                        | ESConv            | MSC               | Total             |
+|--------------------------------------------------------|-------------------|-------------------|-------------------|
+| Dialogues                                              | 80                | 80                | 160               |
+| History-response paris                                 | 694               | 800               | 922               |
+| Utterances                                             | 2301              | 3807              | 6108              |
+| Utterances containing direct causes                    | 1347              | 1525              | 2872              |
+| Average token length of direct causes                  | 24.01 (std=16.61) | 22.22 (std=13.79) | 23.05 (std=15.20) |
+| The proportion of direct causes in original utterances | 0.86 (std=0.22)   | 0.72 (std=0.27)   | 0.79 (std=0.26)   |
+
+![The ratio between the number of the history-response pairs with a particular number of direct causes and all history-response pairs.](images/numOfCausesHist.png)
+![Proximity between direct causes and responses, measured by the percentage of such pairs in all history-response pairs.](images/positionOfCausesHist.png)
+
 ### Data Format
 The dataset format is like the following.
 ```bash
