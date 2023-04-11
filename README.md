@@ -1,4 +1,4 @@
-# <img src="img/logo.jpg" width="8%" alt="" align=center /> CGDIALOG (Under construction)
+# <img src="img/logo.jpg" width="8%" alt="" align=center /> CGDIALOG
 
 This repository contains the dataset and the pytorch implementations of the models from the paper [Less is More: Mitigate Spurious Correlations for Open-Domain Dialogue Response Generation Models by Causal Discovery]().
 
@@ -67,19 +67,18 @@ You can download our models, then put to `models` folder:
 
 ### Generate ESConv responses
 ```bash
-python test_causal_response_generator.py --validation_file datasets/ESConv/test_dataset.json --model_name_or_path models/ESConv_causal_generator_model/ 
---tokenizer_name models/blenderbot_400M_distill/ --twoCondition_tc_model_name_or_path models/ESConv_classifier/ --tc_tokenizer_name roberta_base/ --output_dir outputs/ESConv_causal_generator_test_result
+python test_causal_response_generator.py --validation_file datasets/ESConv/test_dataset.json --model_name_or_path models/ESConv_causal_generator_model/ --tokenizer_name models/blenderbot_400M_distill/ --twoCondition_tc_model_name_or_path models/ESConv_classifier/ --tc_tokenizer_name models/roberta_base/ --output_dir outputs/ESConv_causal_generator_test_result
 ```
 
 
 ### Generate MSC responses
 ```bash
-python test_causal_response_generator.py --validation_file datasets/msc/msc_dialogue/session_4/test_dataset.json --model_name_or_path models/msc_causal_generator_model/ 
---tokenizer_name models/blenderbot_400M_distill/ --twoCondition_tc_model_name_or_path models/msc_classifier/ --tc_tokenizer_name roberta_base/ --output_dir outputs/msc_causal_generator_test_result
+python test_causal_response_generator.py --validation_file datasets/msc/msc_dialogue/session_4/test.json --model_name_or_path models/msc_causal_generator_model/ --tokenizer_name models/blenderbot_400M_distill/ --twoCondition_tc_model_name_or_path models/msc_classifier/ --tc_tokenizer_name models/roberta_base/ --output_dir outputs/msc_causal_generator_test_result
 ```
 
 ### Select final response
 ```bash
+python
 from select_best_response_ourModel import select_highScore_response
 select_highScore_response(ourModel_file="outputs/ESConv_causal_generator_test_result", save_file="outputs/ESConv_test_result_in_testset_highestScore.json")
 select_highScore_response(ourModel_file="outputs/msc_causal_generator_test_result", save_file="outputs/msc_test_result_in_testset_highestScore.json")
