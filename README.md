@@ -55,15 +55,12 @@ conda activate env/
 pip install -r requirements.txt 
 ```
 
-## How to use our models
-You can download our models, then put to `models` folder:
-- [ESConv_classifier](https://drive.google.com/drive/folders/109rlsiHP0o2-w2Dy0DVqwWPa6joYTNBo?usp=sharing)
-- [MSC_classifier](https://drive.google.com/drive/folders/1_t9mPzQQFHhcbp1azQ11e6cse_Tz9vR0?usp=sharing)
-- [ESConv_generator](https://drive.google.com/drive/folders/1RWvbklirSxaHjofJyIxYMu42Ge444WDv?usp=sharing)
-- [MSC_generator](https://drive.google.com/drive/folders/1tBAvLN9W_dxQqNcAAxdblTUtVbFjaJUN?usp=sharing)
-- [blenderbot](https://drive.google.com/drive/folders/1vkslYrL0epbLeoP131Wh3a2BJaBuvHd3?usp=sharing)
-- [roberta](https://drive.google.com/drive/folders/1rF9fx3cFZ3VG5huIvj3hXLTKGt2dRFYj?usp=sharing)
 
+### Train Models
+```bash
+python run_dialogue_generation_no_trainer.py --train_file datasets/CGDIALOG/ESConv_causal_generator_train.csv --model_name_or_path models/blenderbot_400M_distill/ --output_dir models/ESConv_causal_generator_model_new
+python run_dialogue_generation_no_trainer.py --train_file datasets/CGDIALOG/msc_causal_generator_train.csv --model_name_or_path models/blenderbot_400M_distill/ --output_dir models/msc_causal_generator_model_new
+```
 
 ### Generate ESConv responses
 ```bash
@@ -82,10 +79,4 @@ python
 from select_best_response_ourModel import select_highScore_response
 select_highScore_response(ourModel_file="outputs/ESConv_causal_generator_test_result", save_file="outputs/ESConv_test_result_in_testset_highestScore.json")
 select_highScore_response(ourModel_file="outputs/msc_causal_generator_test_result", save_file="outputs/msc_test_result_in_testset_highestScore.json")
-```
-
-### Train Models
-```bash
-python run_dialogue_generation_no_trainer.py --train_file datasets/CGDIALOG/ESConv_causal_generator_train.csv --model_name_or_path models/blenderbot_400M_distill/ --output_dir models/ESConv_causal_generator_model_new
-python run_dialogue_generation_no_trainer.py --train_file datasets/CGDIALOG/msc_causal_generator_train.csv --model_name_or_path models/blenderbot_400M_distill/ --output_dir models/msc_causal_generator_model_new
 ```
